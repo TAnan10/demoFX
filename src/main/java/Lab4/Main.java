@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage stage) {
         Model model = new Model();
 
-        PaintSurface surface = new PaintSurface(model, 500, 500);
+        PaintSurface surface = new PaintSurface(model, 1000, 700);
         BottomPanel bottomPanel = new BottomPanel();
         bottomPanel.getClearButton().setOnAction(e -> surface.clear());
         bottomPanel.getExitButton().setOnAction(e -> Platform.exit());
@@ -28,7 +28,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(pane);
         stage.setScene(scene);
-        stage.setTitle("Paint Program");
+        stage.setTitle("Välkommen till ritprogrammet!");
         stage.show();
     }
 

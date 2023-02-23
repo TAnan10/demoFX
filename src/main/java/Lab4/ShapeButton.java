@@ -14,7 +14,7 @@ public class ShapeButton extends Button {
         setGraphic(createShapeCanvas(shape));
     }
 
-    public Shape getMyShape() {
+     public Shape getMyShape() {
         return myShape;
     }
 
@@ -22,13 +22,14 @@ public class ShapeButton extends Button {
         Canvas canvas = new Canvas(50, 50);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        double xOffset = (50 - shape.getWidth()) / 2.0; // calculate x offset to center shape
-        double yOffset = (50 - shape.getHeight()) / 2.0; // calculate y offset to center shape
+        double xOffset = (50 - shape.getWidth()) / 2.0;
+        double yOffset = (50 - shape.getHeight()) / 2.0;
 
         gc.setFill(shape.getMyColor());
-        gc.translate(xOffset, yOffset); // translate graphics context to center shape
+        gc.translate(xOffset, yOffset);
         shape.drawYourself(gc);
 
         return canvas;
     }
 }
+
