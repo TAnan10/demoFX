@@ -31,7 +31,9 @@ public class SidePanel extends VBox {
         getChildren().add(colorLabel);
 
         for (ColorButton button : cButtons) {
-            button.setOnAction(e -> model.setColor(button.getMyColor()));
+            button.setOnAction(e -> {
+                model.setColor(button.getMyColor());
+            });
             getChildren().add(button);
         }
 
@@ -46,7 +48,13 @@ public class SidePanel extends VBox {
         };
 
         for (ShapeButton button : sButtons) {
-            button.setOnAction(e -> model.setShape(button.getMyShape()));
+            button.setOnAction(e -> {
+                model.setShape(button.getMyShape());
+                for (ShapeButton b : sButtons) {
+                    b.setStyle("-fx-background-color: transparent;");
+                }
+                button.setStyle("-fx-background-color: lightgray;");
+            });
             getChildren().add(button);
         }
     }

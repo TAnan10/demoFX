@@ -14,25 +14,21 @@ public class ShapeButton extends Button {
         setGraphic(createShapeCanvas(shape));
     }
 
+    public Shape getMyShape() {
+        return myShape;
+    }
+
     private Canvas createShapeCanvas(Shape shape) {
         Canvas canvas = new Canvas(50, 50);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        gc.setFill(shape.getMyColor());
 
-        if (shape instanceof MyCircle) {
-            gc.fillOval(5, 5, 40, 40);
-        } else if (shape instanceof MySquare) {
-            gc.fillRect(5, 5, 40, 40);
-        } else if (shape instanceof MyTriangle) {
-            double[] xPoints = {25, 5, 45};
-            double[] yPoints = {5, 45, 45};
-            gc.fillPolygon(xPoints, yPoints, 3);
-        }
+        double xOffset = (50 - shape.getWidth()) / 2.0; // calculate x offset to center shape
+        double yOffset = (50 - shape.getHeight()) / 2.0; // calculate y offset to center shape
+
+        gc.setFill(shape.getMyColor());
+        gc.translate(xOffset, yOffset); // translate graphics context to center shape
+        shape.drawYourself(gc);
 
         return canvas;
-    }
-
-    public Shape getMyShape() {
-        return myShape;
     }
 }

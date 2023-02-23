@@ -14,6 +14,6 @@ public class MyTriangle extends Shape {
     @Override
     public void drawYourself(GraphicsContext gc) {
         gc.setFill(myColor);
-        gc.fillPolygon(new double[]{x, x - sideLength / 2, x + sideLength / 2}, new double[]{y - sideLength / 2, y + sideLength / 2, y + sideLength / 2}, 3);
+        gc.fillPolygon(new double[]{getX(), getX() - sideLength / 2, getX() + sideLength / 2}, new double[]{getY() - sideLength / 2, getY() + sideLength / 2, getY() + sideLength / 2}, 3);
     }
 }

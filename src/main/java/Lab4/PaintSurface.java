@@ -47,8 +47,8 @@ public class PaintSurface extends Canvas {
     }
 
     private Shape updateShape(Shape shape, double x, double y) {
-        shape.x = (int) x;
-        shape.y = (int) y;
+        shape.setX((int) x);
+        shape.setY((int) y);
         return shape;
     }
 

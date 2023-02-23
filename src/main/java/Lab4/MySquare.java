@@ -14,6 +14,6 @@ public class MySquare extends Shape {
     @Override
     public void drawYourself(GraphicsContext gc) {
         gc.setFill(myColor);
-        gc.fillRect(x - sideLength/2, y - sideLength/2, sideLength, sideLength);
+        gc.fillRect(getX() - sideLength/2, getY() - sideLength/2, sideLength, sideLength);
     }
 }
