@@ -5,8 +5,8 @@ import javafx.scene.paint.Color;
 
 public abstract class Shape {
     private int x;
-    protected int y;
-    protected Color myColor;
+    private int y;
+    private Color myColor;
 
     public Shape(int x, int y, Color color) {
         this.x = x;

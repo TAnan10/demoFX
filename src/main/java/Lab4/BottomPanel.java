@@ -11,10 +11,8 @@ public class BottomPanel extends HBox {
     public BottomPanel() {
         setPadding(new Insets(10));
         setSpacing(10);
-
         clearButton = new Button("Clear");
         exitButton = new Button("Exit");
-
         getChildren().addAll(clearButton, exitButton);
     }
 
