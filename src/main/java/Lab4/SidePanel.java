@@ -2,6 +2,7 @@ package Lab4;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
@@ -25,10 +26,18 @@ public class SidePanel extends VBox {
                 new ColorButton(Color.BLACK)
         };
 
+        Label colorLabel = new Label("Färg");
+        colorLabel.setAlignment(Pos.CENTER);
+        getChildren().add(colorLabel);
+
         for (ColorButton button : cButtons) {
             button.setOnAction(e -> model.setColor(button.getMyColor()));
             getChildren().add(button);
         }
+
+        Label shapesLabel = new Label("Shapes");
+        shapesLabel.setAlignment(Pos.CENTER);
+        getChildren().add(shapesLabel);
 
         sButtons = new ShapeButton[]{
                 new ShapeButton(new MyCircle(0, 0, 20, Color.BLACK)),

@@ -13,7 +13,7 @@ public class MyTriangle extends Shape {
 
     @Override
     public void drawYourself(GraphicsContext gc) {
-        gc.setFill(color);
+        gc.setFill(myColor);
         gc.fillPolygon(new double[]{x, x - sideLength / 2, x + sideLength / 2}, new double[]{y - sideLength / 2, y + sideLength / 2, y + sideLength / 2}, 3);
     }
 }

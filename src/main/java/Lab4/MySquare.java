@@ -13,7 +13,7 @@ public class MySquare extends Shape {
 
     @Override
     public void drawYourself(GraphicsContext gc) {
-        gc.setFill(color);
+        gc.setFill(myColor);
         gc.fillRect(x - sideLength/2, y - sideLength/2, sideLength, sideLength);
     }
 }

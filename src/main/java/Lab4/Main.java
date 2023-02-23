@@ -1,6 +1,7 @@
 package Lab4;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -15,12 +16,13 @@ public class Main extends Application {
         PaintSurface surface = new PaintSurface(model, 500, 500);
         BottomPanel bottomPanel = new BottomPanel();
         bottomPanel.getClearButton().setOnAction(e -> surface.clear());
+        bottomPanel.getExitButton().setOnAction(e -> Platform.exit());
         SidePanel sidePanel = new SidePanel(model);
 
         BorderPane pane = new BorderPane();
         pane.setCenter(surface);
         pane.setBottom(bottomPanel);
-        pane.setLeft(sidePanel);
+        pane.setRight(sidePanel);
         pane.setPadding(new Insets(10));
 
         Scene scene = new Scene(pane);
