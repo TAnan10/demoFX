@@ -7,10 +7,12 @@ public class ColorButton extends Button {
     private Color myColor;
 
     public ColorButton(Color color) {
-        super();
         myColor = color;
-        setPrefSize(50, 50);
-        setStyle("-fx-background-color: #" + myColor.toString().substring(2, 8) + ";");
+        setStyle("-fx-background-color: #" + color.toString().substring(2, 8));
+        setMinWidth(30);
+        setMaxWidth(30);
+        setMinHeight(30);
+        setMaxHeight(30);
     }
 
     public Color getMyColor() {
