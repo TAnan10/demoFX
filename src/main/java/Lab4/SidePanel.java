@@ -31,8 +31,12 @@ public class SidePanel extends VBox {
         getChildren().add(colorLabel);
 
         for (ColorButton button : cButtons) {
-            button.setOnAction(e -> {
+            button.setOnMouseClicked(e -> {
                 model.setColor(button.getMyColor());
+                for (ColorButton b : cButtons) {
+                    b.setSelected(false);
+                }
+                button.setSelected(true);
             });
             getChildren().add(button);
         }

@@ -14,22 +14,18 @@ public class ShapeButton extends Button {
         setGraphic(createShapeCanvas(shape));
     }
 
-     public Shape getMyShape() {
+    public Shape getMyShape() {
         return myShape;
     }
 
     private Canvas createShapeCanvas(Shape shape) {
         Canvas canvas = new Canvas(50, 50);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-
         double xOffset = (50 - shape.getWidth()) / 2.0;
         double yOffset = (50 - shape.getHeight()) / 2.0;
-
         gc.setFill(shape.getMyColor());
         gc.translate(xOffset, yOffset);
         shape.drawYourself(gc);
-
         return canvas;
     }
 }
-

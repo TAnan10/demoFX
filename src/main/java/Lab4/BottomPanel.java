@@ -19,7 +19,6 @@ public class BottomPanel extends HBox {
     public Button getClearButton() {
         return clearButton;
     }
-
     public Button getExitButton() {
         return exitButton;
     }
