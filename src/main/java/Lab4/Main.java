@@ -15,6 +15,7 @@ public class Main extends Application {
         PaintSurface surface = new PaintSurface(model, 500, 500);
         BottomPanel bottomPanel = new BottomPanel();
         bottomPanel.getClearButton().setOnAction(e -> surface.clear());
+        bottomPanel.getExitButton().setOnAction(e -> Platform.exit());
         SidePanel sidePanel = new SidePanel(model);
 
         BorderPane pane = new BorderPane();
