@@ -7,14 +7,8 @@ public class Model {
     private Color currentColor;
     private Shape[] contents;
 
-    private static final Model INSTANCE = new Model();
-
     public Model() {
         contents = new Shape[0];
-    }
-
-    public static Model getInstance() {
-        return INSTANCE;
     }
 
     public void setColor(Color color) {

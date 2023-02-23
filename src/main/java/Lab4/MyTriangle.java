@@ -1,46 +1,19 @@
 package Lab4;
 
-import javafx.scene.Node;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Polygon;
-import javafx.scene.text.Font;
 
 public class MyTriangle extends Shape {
-    private int size;
+    private int sideLength;
 
-    public MyTriangle(double x, double y, Color color, int size) {
+    public MyTriangle(int x, int y, int sideLength, Color color) {
         super(x, y, color);
-        this.size = size;
+        this.sideLength = sideLength;
     }
 
     @Override
     public void drawYourself(GraphicsContext gc) {
-        gc.setFill(myColor);
-        gc.setFont(Font.font(50));
-        gc.fillPolygon(new double[]{x, x + size, x + size / 2.0},
-                new double[]{y, y, y - size * Math.sqrt(3) / 2.0},
-                3);
-    }
-
-    public Node getNode() {
-        Polygon polygon = new Polygon();
-        polygon.getPoints().addAll(
-                x, y,
-                x + size, y,
-                x + size / 2.0, y - size * Math.sqrt(3) / 2.0
-        );
-        polygon.setFill(myColor);
-        return polygon;
-    }
-
-    @Override
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    @Override
-    public void setY(double y) {
-        this.y = y;
+        gc.setFill(color);
+        gc.fillPolygon(new double[]{x, x - sideLength / 2, x + sideLength / 2}, new double[]{y - sideLength / 2, y + sideLength / 2, y + sideLength / 2}, 3);
     }
 }
