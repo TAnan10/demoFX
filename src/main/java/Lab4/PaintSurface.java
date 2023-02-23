@@ -29,16 +29,16 @@ public class PaintSurface extends Canvas {
 
     private Shape createNewShape(double x, double y) {
         Shape shape = myModel.getCurrentShape();
-        String shapeClassName = shape.getClass().getSimpleName();
 
-        if (shapeClassName.equals("MyCircle")) {
-            shape = new MyCircle((int) x, (int) y, 20, myModel.getCurrentColor());
-        } else if (shapeClassName.equals("MySquare")) {
-            shape = new MySquare((int) x, (int) y, 40, myModel.getCurrentColor());
-        } else if (shapeClassName.equals("MyTriangle")) {
-            shape = new MyTriangle((int) x, (int) y, 40, myModel.getCurrentColor());
+        if (shape.getClass().getSimpleName().equals("MyCircle")) {
+            return new MyCircle((int) x, (int) y, 20, myModel.getCurrentColor());
+        } else if (shape.getClass().getSimpleName().equals("MySquare")) {
+            return new MySquare((int) x, (int) y, 40, myModel.getCurrentColor());
+        } else if (shape.getClass().getSimpleName().equals("MyTriangle")) {
+            return new MyTriangle((int) x, (int) y, 40, myModel.getCurrentColor());
+        } else {
+            return null;
         }
-        return null;
     }
 
     private void redraw() {
